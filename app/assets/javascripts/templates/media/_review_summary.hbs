@@ -1,4 +1,4 @@
-{{#link-to 'reviews.show' id}}
+
   <div class="review rounded-block">
     <div class="reviewer-thumb-wrapper hidden-xs">
       {{avatar user 'thumb'}}
@@ -11,10 +11,11 @@
       <span class="review-stars">
         {{stars rating}}
       </span>
-      <p class="review-summary">{{summary}}</p>
+      {{#link-to 'reviews.show' id}}
+        <p class="review-summary">{{summary}}</p>
+      {{/link-to}}
       <p class="review-likes">
         {{positiveVotes}} out of {{totalVotes}} users found this review helpful.
       </p>
     </div>
   </div>
-{{/link-to}}
